@@ -7,6 +7,10 @@ public class NavMeshAgentController : MonoBehaviour
 {
     [SerializeField]
     private float speed = 10;
+    [SerializeField]
+    private float xCorrection = 1;
+    [SerializeField]
+    private float zCorrection = 1;
 
     private NavMeshAgent agent;
     private void Start() {
@@ -14,8 +18,10 @@ public class NavMeshAgentController : MonoBehaviour
     }
 
     private void Update() {
-        Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * speed;
-        //direction.Normalize();
+        Vector3 direction = new Vector3(
+            Input.GetAxis("Horizontal") * xCorrection, 
+            0, 
+            Input.GetAxis("Vertical") * zCorrection) * speed;
         agent.velocity = direction;
     }
 }
