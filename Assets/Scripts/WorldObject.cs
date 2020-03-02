@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WorldObject : MonoBehaviour
-{
-    protected virtual void Start()
-    {
-        
+public class WorldObject : MonoBehaviour {
+    protected virtual void Start() {
+
     }
 
-    protected virtual void Update()
-    {
-        
+    protected virtual void Update() {
+
     }
 }
